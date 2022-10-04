@@ -1,0 +1,4 @@
+Error @ reLogin(9): Password Fail: No Password is Set for julian is awesome
+Error @ EnterEmail(1): "crazyLegs.jpeg" attempted
+Error @ EnterOutputFileName(7): "funbuns" attempted
+Error @ reLogin(9): invalid Username: eyeball

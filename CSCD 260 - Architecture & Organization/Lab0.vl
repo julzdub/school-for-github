@@ -1,0 +1,81 @@
+module main;
+	reg I0, I1, D0, D1;
+	wire A, B, C, D, aluOutput;
+
+	decdr decoder1(I1, I0, A, B, C, D);
+	alu alu1(D0, D1, A, B, C, D, aluOutput);
+	
+	initial begin
+		$display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+			I1=0; I0=0; D0=0; D1=0;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+			I1=0; I0=1; D0=0; D1=0;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+                        I1=1; I0=0; D0=0; D1=0;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+                        I1=1; I0=1; D0=0; D1=0;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+
+
+			I1=0; I0=0; D0=1; D1=0;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+			I1=0; I0=1; D0=1; D1=0;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+                        I1=1; I0=0; D0=1; D1=0;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+                        I1=1; I0=1; D0=1; D1=0;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+
+			I1=0; I0=0; D0=0; D1=1;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+			I1=0; I0=1; D0=0; D1=1;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+                        I1=1; I0=0; D0=0; D1=1;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+                        I1=1; I0=1; D0=0; D1=1;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+
+		
+
+			I1=0; I0=0; D0=1; D1=1;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+			I1=0; I0=1; D0=1; D1=1;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+                        I1=1; I0=0; D0=1; D1=1;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+                        I1=1; I0=1; D0=1; D1=1;
+		#1 $display("(%b %b)(%b %b) -- %b", D1, D0, I0, I1, aluOutput);
+
+	
+
+                $finish;
+	end
+endmodule
+
+module decdr(i1, i0, a, b, c, d);
+	input i1, i0;
+	output a,b,c,d;
+
+	assign a = ~i1 & ~i0;
+	assign b = ~i1 & i0;
+	assign c = i1 & ~i0;
+	assign d = i1 & i0;
+
+endmodule
+		
+module alu(D0, D1, a, b, c, d, aluOutput);
+	input D0, D1, a, b, c, d;
+	output aluOutput;
+	wire circuit0, circuit1, circuit2, circuit3;
+	
+	assign circuit0 = a & (D0 & D1);
+	assign circuit1 = b & (D0 | D1);
+	assign circuit2 = c & (D0 ^ D1);
+	assign circuit3 = d & ~D0;
+
+	assign aluOutput = circuit0 | circuit1 | circuit2 | circuit3;
+
+	
+
+endmodule
+	

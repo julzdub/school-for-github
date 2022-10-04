@@ -1,0 +1,37 @@
+/Library/Java/JavaVirtualMachines/jdk-13.0.1.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=49805:/Applications/IntelliJ IDEA CE.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath "/Users/julian/Desktop/CSCD Design Patterns/Factory/out/production/Factory" ShapeTester
+This is the unsorted list: 
+
+Triangle, area: 4.0, perimeter: 10.246211251235321
+Circle, area: 88.82643960980423, perimeter: 18.84955592153876
+Square, area: 54.760000000000005, perimeter: 29.6
+Circle, area: 88.82643960980423, perimeter: 18.84955592153876
+Rectangle, area: 8.0, perimeter: 12.0
+Square, area: 25.0, perimeter: 20.0
+Triangle, area: 4.2, perimeter: 10.371033792700885
+Rectangle, area: 8.4, perimeter: 12.2
+Circle, area: 39.47841760435743, perimeter: 12.566370614359172
+Rectangle, area: 20.0, perimeter: 18.0
+Square, area: 9.0, perimeter: 12.0
+Circle, area: 199.8594891220595, perimeter: 28.274333882308138
+Triangle, area: 10.0, perimeter: 14.433981132056603
+Rectangle, area: 820.0, perimeter: 121.0
+
+This is after being sorted: 
+
+Circle, area: 39.47841760435743, perimeter: 12.566370614359172
+Circle, area: 88.82643960980423, perimeter: 18.84955592153876
+Circle, area: 88.82643960980423, perimeter: 18.84955592153876
+Circle, area: 199.8594891220595, perimeter: 28.274333882308138
+Rectangle, area: 8.0, perimeter: 12.0
+Rectangle, area: 8.4, perimeter: 12.2
+Rectangle, area: 20.0, perimeter: 18.0
+Rectangle, area: 820.0, perimeter: 121.0
+Square, area: 9.0, perimeter: 12.0
+Square, area: 25.0, perimeter: 20.0
+Square, area: 54.760000000000005, perimeter: 29.6
+Triangle, area: 4.0, perimeter: 10.246211251235321
+Triangle, area: 4.2, perimeter: 10.371033792700885
+Triangle, area: 10.0, perimeter: 14.433981132056603
+
+Process finished with exit code 0
+

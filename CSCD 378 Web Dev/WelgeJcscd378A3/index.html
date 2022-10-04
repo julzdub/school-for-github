@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+
+<!----Julian Welge Assignment 3 cscd 378 -->
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <div class="hero bg-primary">
+        <div class="hero-body">
+          <h1>Fun With Integers!</h1>
+          <p>A fun way to interact with your favorite integers.</p>
+        </div>
+    </div>
+</head>
+
+<body>
+    <form action="myform.php" method="POST">
+        <p>
+            Please enter a positive integer: <input type="number" name="theNumber" /><br />
+            Check/Uncheck the following boxes for facts on your number - <br />
+
+            Name: <input type="checkbox" name="theName" value="checked" /><br />
+            Prime Factors: <input type="checkbox" name="primeFactors" value="checked" /><br />
+            Divisors: <input type="checkbox" name="divisors" value="checked" /><br />
+            Base Equivalents: <input type="checkbox" name="baseEquivalents" value="checked" /><br />
+            Square Roots: <input type="checkbox" name="squareRoots" value="checked" /><br />
+            Fun Facts: <input type="checkbox" name="funFacts" value="checked" /><br />
+
+            <p><input type="submit" value="Send it!"></p>
+
+        </p>
+    </form>
+</body>

@@ -1,0 +1,25 @@
+Compile manually the following high level language.
+
+int array[] = {3,5,21,7,3,4,5,8};
+int n_elem = 8;
+
+main()
+{int i;
+ int o_elem;
+
+  for(i=o_elem=0; i<n_elem; i++)
+  {
+     func( array[i] );
+  }
+}
+
+func(int num)
+{
+    if( num & 1 ) func( num );
+}
+
+
+print_array(int Num)
+{
+   syscall to print Num 
+}

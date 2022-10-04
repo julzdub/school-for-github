@@ -1,0 +1,54 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2509
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww12960\viewh11200\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 .data\
+.align 2\
+array .word 3, 5, 21, 7, 3, 4, 5, 8\
+n_elem .word 8 		# number of elements in array, limit in for-loop\
+\
+.text\
+main:\
+\
+la $t1, n_elem 		# loading address of n_elem => $t1\
+lw $t1, 0($t1)  		# loading contents of n_elem, array length: (8) => t1\
+\
+addi $s0, $0, 0		# counter for for-loop => s0\
+addi $t0, $0, 0 		# starting spot in for-loop => t0\
+\
+la $t2, array		# loads starting address of array => t2\
+\
+forLoop:\
+lw $t3, 0($t2)		# loading element from the array => t3\
+addi $sp, $0, -4		# moving stack pointer -4\
+sw $t3, 0($sp)		# stores the value of t3 (array element) onto the stack\
+jal func				# jumps to func, links back to here in $ra\
+addi $sp, $0, 4		# moves stack pointer back to original spot\
+addi $t2, $0, 4		# moves pointer in array to next element\
+addi $s0, $0, 1		# increments for-loop counter by 1\
+blt $s0, $t1, forLoop	# compares counter to array limit in t1\
+\
+\
+addi $v0, $0, 10		# end main\
+syscall\
+\
+func:\
+addi $sp, $0, -4		# moves the stack pointer -4\
+sw $ra, 0($sp)		# stores address in $ra onto the stack\
+addi $sp, $0, 4		# moves the stack pointer back up 4\
+jal print			# jumps to print, stores return in $ra\
+lw $ra, -4($sp)		# moves return address in stack back to $ra\
+jr $ra				# returns back to last jal\
+\
+print:\
+lw $a0, 0($sp)		# loads integer at stack pointer => a0 \
+addi $v0, $0, 1		# chooses the syscall\
+syscall				# prints int\
+jr $ra				# returns back to address in $ra\
+\
+\
+\
+}

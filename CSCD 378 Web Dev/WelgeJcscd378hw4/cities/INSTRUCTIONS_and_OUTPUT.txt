@@ -1,0 +1,41 @@
+Created by Julian Welge - cscd 378 - Dr. Breshears
+
+In order to run this application via a terminal, make sure tinker is accessible.
+Next, while inside the 'Cities' directory, run: php artisan tinker
+run: use App\Domain\CityAnalyzer
+create an instance of the CityAnalyzer class ie: $analyzer = new CityAnalyzer
+call the populationReport() function ie: $analyzer->populationReport();
+analyze the output.
+
+Sample output should look something like:
+
+Population Report for 2010
+==========================
+
+Ten Highest Populated Cities
+----------------------------
+Seattle (608660)
+Spokane (208916)
+Tacoma (198397)
+Vancouver (161791)
+Bellevue (122363)
+Everett (103019)
+Kent (92411)
+Yakima (91067)
+Renton (90927)
+Spokane Valley (89755)
+
+Ten Lowest Populated Cities
+---------------------------
+Krupp (48)
+Lamont (70)
+Hatton (101)
+Waverly (106)
+Starbuck (129)
+Farmington (146)
+Hartline (151)
+Metaline (173)
+Index (178)
+Latah (183)
+
+Random City: Wilbur (884)

@@ -1,0 +1,101 @@
+Union Find Java class
+No unread replies.No replies.
+I attached the Java UnionFind Class here, you can use it in your hw7. I added a new method, public boolean find(int v1, int v2), which is consistent with the Lecture notes. You can place this class inside the Krusal Java class, but not in the Graph class.
+
+ 
+
+// begin inner class
+
+private class UnionFind
+
+{
+
+           private HashSet<Integer>[] components;
+
+           public UnionFind(int numV) { //pass in the number of vertices
+
+                  this.components= create(numV);
+
+            }
+
+ 
+
+// create the array of sets that contain singletons of each vertex
+
+public HashSet<Integer>[] create(int V)  //pass in the number of vertices
+
+{
+
+           HashSet<Integer>[] c = new HashSet[V];
+
+           for (int i = 0; i < V; i++)
+
+           {
+
+                   c[i] = new HashSet<Integer>();
+
+                   c[i].add(i);
+
+            }
+
+           return c;
+
+ }
+
+ 
+
+// finds and returns the index of the set that the specified vertex is located in
+
+public int find(int vertex)
+
+{
+
+             for (int i = 0; i < components.length; i++)
+
+                            if (components[i].contains(vertex))
+
+                                        return i;
+
+ 
+
+               return -1;
+
+}
+
+// finds whether v1 and v2 are contained in the same component
+
+public boolean find(int v1, int v2)
+
+{
+
+             if( find(v1) == -1 || find(v2) == -1)
+
+                        return false;
+
+             else if( find(v1) == find(v2) )
+
+                       return true;
+
+                 return false;
+
+}
+
+ 
+
+// adds set c2 to set c1
+
+public void union(int c1, int c2)
+
+{
+
+                     int i1 = find(c1); int i2 = find(c2);
+
+                    components[i1].addAll(components[i2]);
+
+                    components[i2].clear();
+
+}
+
+}
+
+// end inner class

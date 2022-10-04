@@ -1,0 +1,3 @@
+Error @ reLogin(9): invalid Username: julzdub
+Error @ EnterOutputFileName(7): "/home/outputtest.txt" attempted
+Error @ EnterOutputFileName(7): "/outputtest.txt" attempted

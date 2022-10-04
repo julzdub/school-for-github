@@ -1,0 +1,408 @@
+Last login: Mon Apr 13 08:39:37 on console
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Julians-MacBook-Pro:~ julian$ cd Desktop/
+Julians-MacBook-Pro:Desktop julian$ ls
+$RECYCLE.BIN		Ethan Work		Windows 10
+CSCD 320 Algorithms 2	Microsoft Edge.lnk	desktop.ini
+CSCD Design Patterns	Thumbs.db		media
+CSCD ethics		Visual Studio 2019.lnk	school
+Julians-MacBook-Pro:Desktop julian$ cd CSCD D
+-bash: cd: CSCD: No such file or directory
+Julians-MacBook-Pro:Desktop julian$ CSCD\ Design\ Patterns/
+-bash: CSCD Design Patterns/: is a directory
+Julians-MacBook-Pro:Desktop julian$ ls
+$RECYCLE.BIN		Ethan Work		Windows 10
+CSCD 320 Algorithms 2	Microsoft Edge.lnk	desktop.ini
+CSCD Design Patterns	Thumbs.db		media
+CSCD ethics		Visual Studio 2019.lnk	school
+Julians-MacBook-Pro:Desktop julian$ cd CSCD\ Design\ Patterns/
+Julians-MacBook-Pro:CSCD Design Patterns julian$ ls
+HW1					Head_First_Design_Patterns-1.pdf
+Julians-MacBook-Pro:CSCD Design Patterns julian$ cd HW1
+Julians-MacBook-Pro:HW1 julian$ ls
+GameCharacter.java	SoloAct.java		src
+Guitar.java		Strategy_UML.drawio
+HW1.iml			Strategy_UML.pdf
+Julians-MacBook-Pro:HW1 julian$ java GameCharacter.java
+GameCharacter.java:11: error: invalid method declaration; return type required
+	public playGuitar() {
+	       ^
+GameCharacter.java:14: error: invalid method declaration; return type required
+	public playGuitar(Guitar g) {
+	       ^
+GameCharacter.java:17: error: invalid method declaration; return type required
+	public playSoloAct() {
+	       ^
+GameCharacter.java:20: error: invalid method declaration; return type required
+	public playSoloAct(SoloAct s) {
+	       ^
+4 errors
+error: compilation failed
+Julians-MacBook-Pro:HW1 julian$ java GameCharacter.java
+GameCharacter.java:1: error: cannot find symbol
+public abstract class GameCharacter implements Guitar, SoloAct {
+                                               ^
+  symbol: class Guitar
+GameCharacter.java:1: error: cannot find symbol
+public abstract class GameCharacter implements Guitar, SoloAct {
+                                                       ^
+  symbol: class SoloAct
+GameCharacter.java:4: error: cannot find symbol
+	private Guitar guitar;
+	        ^
+  symbol:   class Guitar
+  location: class GameCharacter
+GameCharacter.java:5: error: cannot find symbol
+	private SoloAct soloAct;
+	        ^
+  symbol:   class SoloAct
+  location: class GameCharacter
+GameCharacter.java:14: error: cannot find symbol
+	public void playGuitar(Guitar g) {
+	                       ^
+  symbol:   class Guitar
+  location: class GameCharacter
+GameCharacter.java:20: error: cannot find symbol
+	public void playSoloAct(SoloAct s) {
+	                        ^
+  symbol:   class SoloAct
+  location: class GameCharacter
+6 errors
+error: compilation failed
+Julians-MacBook-Pro:HW1 julian$ java Guitar.java
+Guitar.java:3: error: = expected
+	private Guitar guitar;
+	                     ^
+1 error
+error: compilation failed
+Julians-MacBook-Pro:HW1 julian$ ls
+FenderTelecaster.java	Guitar.java		Strategy_UML.pdf
+GameCharacter.java	HW1.iml			src
+GibsonFlyingV.java	SoloAct.java
+GibsonSG.java		Strategy_UML.drawio
+Julians-MacBook-Pro:HW1 julian$ javac GameCharacter.java
+Julians-MacBook-Pro:HW1 julian$ javac GameCharacter.java
+Julians-MacBook-Pro:HW1 julian$ javac GameCharacter.java
+Julians-MacBook-Pro:HW1 julian$ javac GameCharacterHendrix.java
+GameCharacterHendrix.java:7: error: invalid method declaration; return type required
+	public GameCharacter() {
+	       ^
+1 error
+Julians-MacBook-Pro:HW1 julian$ javac GameCharacterHendrix.java
+./GuitarOnFire.java:1: error: GuitarOnFire is not abstract and does not override abstract method playSoloAct() in SoloAct
+public class GuitarOnFire implements SoloAct {
+       ^
+1 error
+Julians-MacBook-Pro:HW1 julian$ javac GameCharacterHendrix.java
+Julians-MacBook-Pro:HW1 julian$ javac GameCharacterHendrix.java
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+GuitarHero.java:16: error: ';' expected
+        player1.playSolo(); -- this should print a message that Slash jumped off stage
+                                   ^
+GuitarHero.java:16: error: ';' expected
+        player1.playSolo(); -- this should print a message that Slash jumped off stage
+                                                ^
+GuitarHero.java:16: error: ';' expected
+        player1.playSolo(); -- this should print a message that Slash jumped off stage
+                                                          ^
+GuitarHero.java:16: error: ';' expected
+        player1.playSolo(); -- this should print a message that Slash jumped off stage
+                                                                     ^
+GuitarHero.java:16: error: ';' expected
+        player1.playSolo(); -- this should print a message that Slash jumped off stage
+                                                                                ^
+GuitarHero.java:16: error: not a statement
+        player1.playSolo(); -- this should print a message that Slash jumped off stage
+                                                                                 ^
+GuitarHero.java:16: error: ';' expected
+        player1.playSolo(); -- this should print a message that Slash jumped off stage
+                                                                                      ^
+7 errors
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+GuitarHero.java:16: error: ';' expected
+        player1.playSoloAct(); -- this should print a message that Slash jumped off stage
+                                      ^
+GuitarHero.java:16: error: ';' expected
+        player1.playSoloAct(); -- this should print a message that Slash jumped off stage
+                                                   ^
+GuitarHero.java:16: error: ';' expected
+        player1.playSoloAct(); -- this should print a message that Slash jumped off stage
+                                                             ^
+GuitarHero.java:16: error: ';' expected
+        player1.playSoloAct(); -- this should print a message that Slash jumped off stage
+                                                                        ^
+GuitarHero.java:16: error: ';' expected
+        player1.playSoloAct(); -- this should print a message that Slash jumped off stage
+                                                                                   ^
+GuitarHero.java:16: error: not a statement
+        player1.playSoloAct(); -- this should print a message that Slash jumped off stage
+                                                                                    ^
+GuitarHero.java:16: error: ';' expected
+        player1.playSoloAct(); -- this should print a message that Slash jumped off stage
+                                                                                         ^
+7 errors
+Julians-MacBook-Pro:HW1 julian$ clear
+
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+./GameCharacterSlash.java:9: error: invalid method declaration; return type required
+	public GameCharacterHendrix() {
+	       ^
+./GameCharacterSlash.java:14: error: invalid method declaration; return type required
+	public GameCharacterHendrix(Guitar g) {
+	       ^
+./GameCharacterSlash.java:19: error: invalid method declaration; return type required
+	public GameCharacterHendrix(SoloAct s) {
+	       ^
+./GameCharacterSlash.java:24: error: invalid method declaration; return type required
+	public GameCharacterHendrix(Guitar g, SoloAct s) {
+	       ^
+GuitarHero.java:14: error: cannot find symbol
+        player1.setSoloAct(new JumpOffStage()); 
+               ^
+  symbol:   method setSoloAct(JumpOffStage)
+  location: variable player1 of type GameCharacter
+5 errors
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+GuitarHero.java:14: error: cannot find symbol
+        player1.setSoloAct(new JumpOffStage()); 
+               ^
+  symbol:   method setSoloAct(JumpOffStage)
+  location: variable player1 of type GameCharacter
+1 error
+Julians-MacBook-Pro:HW1 julian$ clear
+
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+GuitarHero.java:14: error: cannot find symbol
+        player1.setSoloAct(new JumpOffStage()); 
+               ^
+  symbol:   method setSoloAct(JumpOffStage)
+  location: variable player1 of type GameCharacter
+1 error
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing Exception in thread "main" java.lang.NullPointerException
+	at GameCharacterSlash.playGuitar(GameCharacterSlash.java:48)
+	at GuitarHero.main(GuitarHero.java:7)
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+./GameCharacterSlash.java:60: error: cannot find symbol
+		System.out.print(name + " is " + this.act);
+		                                     ^
+  symbol: variable act
+./GameCharacterSlash.java:67: error: cannot find symbol
+		System.out.print(name + " is " + this.act);
+		                                     ^
+  symbol: variable act
+./GameCharacterHendrix.java:60: error: cannot find symbol
+		System.out.print(name + " is " + this.act);
+		                                     ^
+  symbol: variable act
+./GameCharacterHendrix.java:67: error: cannot find symbol
+		System.out.print(name + " is " + this.act);
+		                                     ^
+  symbol: variable act
+4 errors
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing nullJimi Hendrix is playing nullSlash is nullJimi Hendrix is nullJimi Hendrix is playing FenderTelecaster@1f32e575Slash is JumpOffStage@2ff4acd0JJuJuJuJuJuJuJuJuJuJuJuJuJuJuJuJulians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+./GameCharacterSlash.java:9: error: invalid method declaration; return type required
+	public GameCharacterHendrix() {
+	       ^
+./GameCharacterSlash.java:14: error: invalid method declaration; return type required
+	public GameCharacterHendrix(Guitar g) {
+	       ^
+./GameCharacterSlash.java:19: error: invalid method declaration; return type required
+	public GameCharacterHendrix(SoloAct s) {
+	       ^
+./GameCharacterSlash.java:24: error: invalid method declaration; return type required
+	public GameCharacterHendrix(Guitar g, SoloAct s) {
+	       ^
+4 errors
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+./GameCharacterSlash.java:12: error: missing return statement
+	}
+	^
+./GameCharacterSlash.java:17: error: missing return statement
+	}
+	^
+./GameCharacterSlash.java:22: error: missing return statement
+	}
+	^
+./GameCharacterSlash.java:27: error: missing return statement
+	}
+	^
+4 errors
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+./GameCharacterSlash.java:9: error: invalid method declaration; return type required
+	public GameCharacterHendrix() {
+	       ^
+1 error
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing GibsonFlyingV@279f2327Jimi Hendrix is playing GibsonFlyingV@2ff4acd0Slash is GuitarOnFire@54bedef2Jimi Hendrix is GuitarOnFire@5caf905dJimi Hendrix is playing FenderTelecaster@8efb846Slash is JumpOffStage@a09ee92Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing GibsonFlyingV@279f2327
+Jimi Hendrix is playing GibsonFlyingV@2ff4acd0
+Slash is GuitarOnFire@54bedef2
+Jimi Hendrix is GuitarOnFire@5caf905d
+Jimi Hendrix is playing FenderTelecaster@8efb846
+Slash is JumpOffStage@a09ee92
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing GibsonFlyingV@279f2327
+Jimi Hendrix is playing GibsonFlyingV@2ff4acd0
+Slash is GuitarOnFire@54bedef2
+Jimi Hendrix is GuitarOnFire@5caf905d
+Jimi Hendrix is playing FenderTelecaster@8efb846
+Slash is JumpOffStage@a09ee92
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing GibsonFlyingV@279f2327
+Jimi Hendrix is playing GibsonFlyingV@2ff4acd0
+Slash is GuitarOnFire@54bedef2
+Jimi Hendrix is GuitarOnFire@5caf905d
+Jimi Hendrix is playing FenderTelecaster@8efb846
+Slash is JumpOffStage@a09ee92
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+./GameCharacterSlash.java:47: error: 'void' type not allowed here
+		System.out.print(name + " is playing " + this.guitar.playGuitar() + "\n");
+		                                                               ^
+./GameCharacterSlash.java:54: error: 'void' type not allowed here
+		System.out.print(name + " is playing " + this.guitar.playGuitar() + "\n");
+		                                                               ^
+./GameCharacterSlash.java:60: error: 'void' type not allowed here
+		System.out.print(name + " is " + this.soloAct.playSoloAct() + "\n");
+		                                                         ^
+./GameCharacterSlash.java:67: error: 'void' type not allowed here
+		System.out.print(name + " is " + this.soloAct.playSoloAct() + "\n");
+		                                                         ^
+./GameCharacterHendrix.java:47: error: 'void' type not allowed here
+		System.out.print(name + " is playing " + this.guitar.playGuitar() + "\n");
+		                                                               ^
+./GameCharacterHendrix.java:54: error: 'void' type not allowed here
+		System.out.print(name + " is playing " + this.guitar.playGuitar() + "\n");
+		                                                               ^
+./GameCharacterHendrix.java:60: error: 'void' type not allowed here
+		System.out.print(name + " is " + this.soloAct.playSoloAct() + "\n");
+		                                                         ^
+./GameCharacterHendrix.java:67: error: 'void' type not allowed here
+		System.out.print(name + " is " + this.soloAct.playSoloAct() + "\n");
+		                                                         ^
+8 errors
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing 
+the Gibson Flying VJimi Hendrix is playing 
+the Gibson Flying VSlash is 
+ lighting the guitar on fire!Jimi Hendrix is 
+ lighting the guitar on fire!Jimi Hendrix is playing 
+the Fender TelecasterSlash is 
+jumping off the stage!Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing the Gibson Flying VJimi Hendrix is playing the Gibson Flying VSlash is  lighting the guitar on fire! 
+Jimi Hendrix is  lighting the guitar on fire! 
+Jimi Hendrix is playing the Fender TelecasterSlash is jumping off the stage! 
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing the Gibson Flying VJimi Hendrix is playing the Gibson Flying VSlash is  lighting the guitar on fire! 
+Jimi Hendrix is  lighting the guitar on fire! 
+Jimi Hendrix is playing the Fender Telecaster 
+Slash is jumping off the stage! 
+Julians-MacBook-Pro:HW1 julian$ clear
+
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing the Gibson Flying VJimi Hendrix is playing the Gibson Flying VSlash is  lighting the guitar on fire! 
+Jimi Hendrix is  lighting the guitar on fire! 
+Jimi Hendrix is playing the Fender Telecaster 
+Slash is jumping off the stage! 
+Julians-MacBook-Pro:HW1 julian$ javac GibsonFlyingV.java
+Julians-MacBook-Pro:HW1 julian$ javac FenderTelecaster.java
+Julians-MacBook-Pro:HW1 julian$ javac GibsonSG.java
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing the Gibson Flying V 
+Jimi Hendrix is playing the Gibson Flying V 
+Slash is  lighting the guitar on fire! 
+Jimi Hendrix is  lighting the guitar on fire! 
+Jimi Hendrix is playing the Fender Telecaster 
+Slash is jumping off the stage! 
+Julians-MacBook-Pro:HW1 julian$ clear
+
+
+
+
+
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+GuitarHero.java:16: error: cannot find symbol
+        player2.perform();
+               ^
+  symbol:   method perform()
+  location: variable player2 of type GameCharacter
+GuitarHero.java:17: error: cannot find symbol
+        player2.perform(new GibsonSG());
+               ^
+  symbol:   method perform(GibsonSG)
+  location: variable player2 of type GameCharacter
+2 errors
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+GuitarHero.java:17: error: method perform in class GameCharacter cannot be applied to given types;
+        player2.perform(new GibsonSG());
+               ^
+  required: no arguments
+  found:    GibsonSG
+  reason: actual and formal argument lists differ in length
+1 error
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing the Gibson Flying V 
+Jimi Hendrix is playing the Gibson Flying V 
+Slash is  lighting the guitar on fire! 
+Jimi Hendrix is  lighting the guitar on fire! 
+Jimi Hendrix is playing the Fender Telecaster 
+Slash is jumping off the stage! 
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing the Gibson Flying V 
+Jimi Hendrix is playing the Gibson Flying V 
+Slash is  lighting the guitar on fire! 
+Jimi Hendrix is  lighting the guitar on fire! 
+Jimi Hendrix is playing the Fender Telecaster 
+Slash is  lighting the guitar on fire! 
+Julians-MacBook-Pro:HW1 julian$ javac GuitarHero.java
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing the Gibson Flying V 
+Jimi Hendrix is playing the Gibson Flying V 
+Slash is  lighting the guitar on fire! 
+Jimi Hendrix is  lighting the guitar on fire! 
+Jimi Hendrix is playing the Fender Telecaster 
+Slash is jumping off the stage! 
+Slash is  lighting the guitar on fire! 
+Julians-MacBook-Pro:HW1 julian$ clear
+
+Julians-MacBook-Pro:HW1 julian$ java GuitarHero
+Slash is playing the Gibson Flying V 
+Jimi Hendrix is playing the Gibson Flying V 
+Slash is  lighting the guitar on fire! 
+Jimi Hendrix is  lighting the guitar on fire! 
+Jimi Hendrix is playing the Fender Telecaster 
+Slash is jumping off the stage! 
+Slash is  lighting the guitar on fire! 
+Julians-MacBook-Pro:HW1 julian$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+.data
+
+prompt .asciiz "Enter int to run program: "
+
+.text
+main:
+
+
+la $a0, prompt	
+addi $v0, $0, 4		# prints the prompt
+syscall
+addi $v0, $0, 5		# reads an integer
+syscall
+sw $v0, 0($t0)		# stores the int value in t0
+addi $sp, $sp, -4
+sw $t0, 0($sp)		# stores the int value on the stack as well
+jal rec				# jumps to rec, stores return address in ra
+addi $sp, $sp, 4	# moves stack pointer back up
+addi $v0, $0, 10
+syscall				# quit
+
+rec:
+lw $t0, 0($sp)		# loads value of integer from stack back into t0
+bne $t0, 0, helper	# if the value loaded is not 0, then goes to helper
+jr $ra 				# returns back to main
+
+
+helper:
+la $a0, 0($sp)
+addi $v0, $0, 5
+syscall				# loads int from stack and prints
+lw $t0, 0($sp)		# reloads the value from the stack in t0 incase it gets altered
+addi $t0, $0, -1	# subtracts 1 from the integer in t0
+sw $t0, 0($sp)		# stores the int value back onto the stack
+j rec				
+
+

@@ -1,0 +1,9 @@
+# this is your b-sort test data
+# You must treat all the data as unsigned numbers!!!
+# So, you need to use unsigned comparison branch instructions
+
+.data
+.align 2	#align n --> next allocation starts at 2^n boundary
+array: .word -9, -2, 3, 8, 5, 0, 0, 0, 1, 1, 90, 99, 99, 99, -1, -1, -1, 87, 78, 12
+n_elem: .word 20
+
